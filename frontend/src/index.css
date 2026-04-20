@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+/* Estilos para que el Markdown se vea bien en modo oscuro */
+.prose strong {
+  color: #22d3ee; /* Cyan-400 para las negritas */
+  font-weight: 700;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+}
+
+.prose ul {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+}

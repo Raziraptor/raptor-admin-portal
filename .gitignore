@@ -1,0 +1,18 @@
+# Python
+backend/venv/
+backend/__pycache__/
+backend/*.pyc
+backend/.env
+
+# Node / React
+frontend/node_modules/
+frontend/dist/
+
+# Docker & DB
+backend/chroma_db/
+postgres_data/
+raptor_db_final/
+.DS_Store
+
+# Variables de entorno (¡Seguridad!)
+.env

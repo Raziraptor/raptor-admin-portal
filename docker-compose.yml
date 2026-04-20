@@ -1,0 +1,41 @@
+services:
+  # 1. NUESTRO NUEVO SERVIDOR DE BASE DE DATOS
+  db:
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Raee.2853083
+      POSTGRES_DB: raptor_db
+    ports:
+      - "5432:5432" # Te permite conectarte con pgAdmin o DBeaver si lo necesitas
+    volumes:
+      - raptor_db_final:/var/lib/postgresql/data
+
+  # 2. EL BACKEND (FastAPI + LangChain)
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma_data:/app/chroma_db
+      - ./backend:/app
+    env_file:
+      - ./backend/.env
+    environment:
+      - SQLALCHEMY_DATABASE_URL=postgresql://postgres:Raee.2853083@db:5432/raptor_db
+    depends_on:
+      - db # Obligamos al backend a esperar a que la base de datos despierte
+
+  # 3. EL FRONTEND (React + Nginx)
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+# Declaración de Discos Duros Virtuales (Para persistencia)
+volumes:
+  chroma_data:
+  raptor_db_final:
