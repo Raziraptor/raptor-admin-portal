@@ -40,3 +40,29 @@ The entire ecosystem is containerized for a **zero-configuration** experience.
 ```bash
 git clone [https://github.com/YourUsername/raptor-admin-portal.git](https://github.com/YourUsername/raptor-admin-portal.git)
 cd raptor-admin-portal
+```
+
+### 2. Configure Environment
+Create a .env file in the /backend folder:
+
+```bash
+GOOGLE_API_KEY=your_gemini_api_key_here
+```
+
+### 3. Launch with Docker
+```Bash
+docker compose up --build
+```
+### 4. Access the Portal
+Dashboard: http://localhost:5173
+
+API Documentation (Swagger): http://localhost:8000/docs
+
+Note: The system automatically seeds a default administrator:
+
+User: admin@raptorsolutions.com
+
+Password: RaptorAdmin2026!
+
+👨‍💻 Developed by
+Raziel Escamilla Systems Integrator & Software Engineer Founder of Raptor Solutions
