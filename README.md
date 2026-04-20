@@ -64,5 +64,5 @@ User: admin@raptorsolutions.com
 
 Password: RaptorAdmin2026!
 
-👨‍💻 Developed by
+**👨‍💻 Developed by**
 Raziel Escamilla Systems Integrator & Software Engineer Founder of Raptor Solutions
